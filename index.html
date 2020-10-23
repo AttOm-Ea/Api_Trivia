@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <!-- Boostrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <title> Random tribia </title>
+</head>
+<body>
+<main>
+    <nav class="navbar navbar-light bg-light content-nav">
+        <div class="content-img">
+            <img src="./logo.png" width="30" height="30" class="d-inline-block align-top" alt=" " loading="lazy">
+        </div>
+        <span class="navbar-brand"> Random tribia </span> 
+    </nav>
+
+    <div class="content-box">
+        <div class="box-select">
+            <div class="input-group igSelect">
+                <div class="input-group-prepend">
+                <label class="input-group-text" for="inputSelect1">Question</label>
+                </div>
+                <select onchange="getQuestion()" class="custom-select" id="inputSelect1">
+                <option selected value="4"> Choose... </option>
+                <option value="4"> Four </option>
+                <option value="8"> Eight </option>
+                <option value="16"> Sixteen </option>
+                <option value="32"> thirty-two </option>
+                </select>
+            </div>
+            <div class="input-group igSelect">
+                <div class="input-group-prepend">
+                <label class="input-group-text" for="inputSelect2">Category</label>
+                </div>
+                <select onchange="getQuestion()" class="custom-select" id="inputSelect2">
+                <option value="0">Choose...</option>
+                <option value="10"> Books </option>
+                <option value="11"> Film </option>
+                <option value="12"> Music </option>
+                <option value="15"> Video Games </option>
+                <option value="21"> Sports </option>
+                <option value="28"> Vehicles </option>
+                </select>
+            </div>
+            <div class="input-group igSelect">
+                <div class="input-group-prepend">
+                <label class="input-group-text" for="inputSelect3">Difficulty</label>
+                </div>
+                <select onchange="getQuestion()" class="custom-select" id="inputSelect3">
+                    <option value="0">Choose...</option>
+                    <option value="easy"> Easy </option>
+                    <option value="medium"> Medium </option>
+                    <option value="hard"> Hard </option>e </option>
+                </select>
+            </div>
+            <div class="input-group igSelect">
+                <div class="input-group-prepend">
+                <label class="input-group-text" for="inputSelect4">Type</label>
+                </div>
+                <select onchange="getQuestion()" class="custom-select" id="inputSelect4">
+                    <option value="0">Choose...</option>
+                    <option value="multiple"> Multiple Choise </option>
+                    <option value="boolean"> True / False </option>
+                </select>
+            </div>
+        </div>
+    </div>
+    
+    <form onsubmit="event.preventDefault(), evaluation()" action="index2.html" class="form">
+        <div class="content-card"> 
+            <div class="contentSelec">
+                 Select your filters!
+            </div>
+        </div>                
+        <div class="contentBtn">
+            <button type="submit" class="btnPrimary">Evaluation</button>
+        </div>
+    </form>
+
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel"> Answers </h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body"> </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal"> retry </button> 
+            <button onclick="location.reload()" type="button" class="btn btn-new">New Game!</button>
+        </div>
+      </div>
+    </div>
+  </div>
+    
+</main>
+
+<!-- Js Boostrap -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+<!-- Js -->
+    <script type="module" src="Js/main.js"> </script>
+</body>
+</html>
