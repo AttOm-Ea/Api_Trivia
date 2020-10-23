@@ -116,6 +116,7 @@
         ModalBody.innerHTML = " ";
         let questionQuantity = document.getElementById('inputSelect1').value;
         let evaluation = 0;
+        let color = "";
         let feedback = "";
         for (let i = 0; i < questionQuantity; i++) {
             let question = document.getElementById('inputSelect-' + i).value;
@@ -125,8 +126,15 @@
             } else {
                 feedback += `<p> The question ${i+1} <samp class="red">is wrong!</samp></p>`
             }
-            // location.reload();
         }
+        let qualification = (evaluation / questionQuantity) * 10;
+        if (qualification > 5){
+            color = "green";
+        } else {
+            color = "red";
+        }
+        feedback += `<hr>`;
+        feedback += `<p> Your qualification is <samp class="${color}"> ${qualification} </samp></p>`;
         ModalBody.innerHTML = feedback;
 
         $('#exampleModal').modal()
